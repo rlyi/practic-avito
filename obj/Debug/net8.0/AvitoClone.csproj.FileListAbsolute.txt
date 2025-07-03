@@ -1,0 +1,8 @@
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.csproj.AssemblyReference.cache
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.AssemblyInfoInputs.cache
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.AssemblyInfo.cs
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.csproj.CoreCompileInputs.cache
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.MvcApplicationPartsAssemblyInfo.cache
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.RazorAssemblyInfo.cache
+C:\repos\practic-web-25\AvitoClone\obj\Debug\net8.0\AvitoClone.RazorAssemblyInfo.cs
