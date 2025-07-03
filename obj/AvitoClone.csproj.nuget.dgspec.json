@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\practic-web-25\\AvitoClone\\AvitoClone.csproj": {}
+    "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\AvitoClone.csproj": {}
   },
   "projects": {
-    "C:\\repos\\practic-web-25\\AvitoClone\\AvitoClone.csproj": {
+    "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\AvitoClone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\practic-web-25\\AvitoClone\\AvitoClone.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\AvitoClone.csproj",
         "projectName": "AvitoClone",
-        "projectPath": "C:\\repos\\practic-web-25\\AvitoClone\\AvitoClone.csproj",
+        "projectPath": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\AvitoClone.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\practic-web-25\\AvitoClone\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
