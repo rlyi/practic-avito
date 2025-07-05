@@ -1,0 +1,163 @@
+/* Основные стили главной страницы */
+.home-header {
+    background-color: #FF5500;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.home-header-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.home-logo {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: 30px;
+}
+
+.home-search-container {
+    flex-grow: 1;
+    display: flex;
+}
+
+.home-search-input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.home-search-button {
+    background-color: #FF5500;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0 4px 4px 0;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.home-auth-buttons {
+    display: flex;
+    margin-left: 20px;
+}
+
+.home-auth-button {
+    color: white;
+    background: none;
+    border: none;
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.home-auth-button:hover {
+    color: #5a0707;
+}
+
+.home-add-button {
+    background-color: white;
+    color: #FF5500;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.home-main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.home-sidebar {
+    width: 250px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-right: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.home-categories-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.home-category-item {
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.home-category-item:hover {
+    color: #FF5500;
+}
+
+.home-ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.home-ad-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.home-ad-card:hover {
+    transform: translateY(-5px);
+}
+
+.home-ad-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.home-ad-info {
+    padding: 15px;
+}
+
+.home-ad-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.home-ad-price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.home-ad-location {
+    font-size: 14px;
+    color: #777;
+}
+
+.home-recently-viewed {
+    margin-top: 40px;
+}
+
+.home-section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

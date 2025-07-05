@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Nb4PghCIaZdiEtkfpGFEgctzs9NVnknFbj8WrhFrtLk=",
+  "Hash": "Pvcj8o6R6X8URzQx0M8tLl606b6hVwc2aHEcdbFaXHA=",
   "Source": "AvitoClone",
   "BasePath": "_content/AvitoClone",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AvitoClone.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\css\\home.css",
+      "SourceId": "AvitoClone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\",
+      "BasePath": "_content/AvitoClone",
+      "RelativePath": "css/home.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
       "Identity": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\css\\site.css",

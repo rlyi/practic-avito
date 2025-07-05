@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\user\source\repos\Practic1\practic-avito
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/Ad/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/Ad/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/source/repos/Practic1/practic-avito/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/source/repos/Practic1/practic-avito/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/Practic1/practic-avito/Views/_ViewImports.cshtml]

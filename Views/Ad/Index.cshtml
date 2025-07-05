@@ -1,0 +1,28 @@
+﻿@model IEnumerable<AvitoClone.Models.Ad>
+
+<h1>Объявления</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Категория</th>
+            <th>Автор</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ad in Model)
+        {
+            <tr>
+                <td>@ad.Title</td>
+                <td>@ad.Price ₽</td>
+                <td>@ad.Category.Name</td>
+                <td>@ad.User.Username</td>
+                <td><a asp-action="Details" asp-route-id="@ad.Id">Подробнее</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Добавить объявление</a>

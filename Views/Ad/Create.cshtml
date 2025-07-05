@@ -1,0 +1,23 @@
+@model AvitoClone.Models.Ad
+
+<h1>Добавить объявление</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoryId" class="control-label"></label>
+        <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))"></select>
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvitoClone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eaa36d19e6bca0cb21cf8efc4ece76bb529bee0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a912b3b30039f187b7df643af20c3f3460c03dfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvitoClone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvitoClone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

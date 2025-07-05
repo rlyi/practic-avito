@@ -1,0 +1,15 @@
+@model AvitoClone.Models.User
+
+<h1>Регистрация</h1>
+
+<form asp-action="Register">
+    <div class="form-group">
+        <label asp-for="Username" class="control-label"></label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+</form>
