@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Pvcj8o6R6X8URzQx0M8tLl606b6hVwc2aHEcdbFaXHA=",
+  "Hash": "dre952bV+cW5Sa9w9x8e5Oz2cUblWWStQBEW14q03Tc=",
   "Source": "AvitoClone",
   "BasePath": "_content/AvitoClone",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\js\\auth.js",
+      "SourceId": "AvitoClone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\",
+      "BasePath": "_content/AvitoClone",
+      "RelativePath": "js/auth.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\auth.js"
     },
     {
       "Identity": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\js\\site.js",

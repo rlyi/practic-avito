@@ -1,8 +1,8 @@
 @model AvitoClone.Models.User
 
-<h2>Регистрация</h2>
+<h2>Вход</h2>
 
-<form asp-action="Register" method="post">
+<form asp-action="Login" method="post">
     <div>
         <label asp-for="Username"></label>
         <input asp-for="Username" />
@@ -15,7 +15,7 @@
         <span asp-validation-for="Password"></span>
     </div>
     
-    <button type="submit">Зарегистрироваться</button>
+    <button type="submit">Войти</button>
 </form>
 
-<p>Уже есть аккаунт? <a asp-action="Login">Войти</a></p>
+<p>Нет аккаунта? <a asp-action="Register">Зарегистрироваться</a></p>

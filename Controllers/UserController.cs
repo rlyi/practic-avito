@@ -1,7 +1,7 @@
 using AvitoClone.Models;
+using AvitoClone.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AvitoClone.Data;
 
 namespace AvitoClone.Controllers
 {
@@ -14,32 +14,40 @@ namespace AvitoClone.Controllers
             _context = context;
         }
 
-        // GET: /User/Register (регистрация)
+        // GET: /User/Register
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
-        // POST: /User/Register (обработка регистрации)
+        // POST: /User/Register
         [HttpPost]
         public async Task<IActionResult> Register(User user)
         {
             if (ModelState.IsValid)
             {
+                if (await _context.Users.AnyAsync(u => u.Username == user.Username))
+                {
+                    ModelState.AddModelError("Username", "Имя пользователя занято");
+                    return View(user);
+                }
+
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Ad"); // После регистрации → на главную
+                return RedirectToAction("Index", "Ad");
             }
             return View(user);
         }
 
-        // GET: /User/Login (вход)
+        // GET: /User/Login
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        // POST: /User/Login (проверка логина/пароля)
+        // POST: /User/Login
         [HttpPost]
         public async Task<IActionResult> Login(User user)
         {
@@ -52,7 +60,8 @@ namespace AvitoClone.Controllers
                 return View(user);
             }
 
-            // TODO: Добавить куки/сессии (пока просто редирект)
+            // Простейшая "авторизация" через ViewData
+            ViewData["CurrentUser"] = existingUser.Username;
             return RedirectToAction("Index", "Ad");
         }
     }
