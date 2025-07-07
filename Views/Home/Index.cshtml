@@ -7,41 +7,19 @@
     <link rel="stylesheet" href="~/css/home.css" />
 }
 
-<!-- Шапка с поиском -->
-<header class="home-header">
-    <div class="home-header-container">
-        <div class="home-logo">Avito Clone</div>
-        
-        <div class="home-search-container">
-            <input type="text" class="home-search-input" placeholder="Найти товары или услуги">
-            <button class="home-search-button">Найти</button>
-        </div>
-        
-        <div class="home-auth-buttons">
-            <button class="home-auth-button">Избранное</button>
-            <button class="home-auth-button">Вход и регистрация</button>
-        </div>
-        
-        <button class="home-add-button">+ Разместить объявление</button>
-    </div>
-</header>
-
-<!-- Основной контент -->
+<!-- Только уникальный контент страницы -->
 <div class="home-main-container">
-    <!-- Боковое меню категорий -->
-    <aside class="home-sidebar">
+    <!-- Боковое меню -->
+    @* <aside class="home-sidebar">
         <div class="home-categories-title">Все категории</div>
-        
         <div class="home-category-item">Авто</div>
         <div class="home-category-item">Недвижимость</div>
         <div class="home-category-item">Работа</div>
-        <!-- Другие категории -->
-    </aside>
-    
+    </aside> *@
+
     <!-- Список объявлений -->
     <main>
         <div class="home-ads-grid">
-            <!-- Пример объявления -->
             <div class="home-ad-card">
                 <img src="https://via.placeholder.com/300x180" alt="Товар" class="home-ad-image">
                 <div class="home-ad-info">
@@ -50,15 +28,14 @@
                     <div class="home-ad-location">Киров</div>
                 </div>
             </div>
-            <!-- Другие объявления -->
         </div>
-        
-        <!-- Просмотренные/рекомендуемые -->
+
+        @* <!-- Рекомендуемые товары -->
         <div class="home-recently-viewed">
             <h2 class="home-section-title">Рекомендуем для вас</h2>
             <div class="home-ads-grid">
-                <!-- Рекомендуемые товары -->
+                <!-- Тут будут товары -->
             </div>
-        </div>
+        </div> *@
     </main>
 </div>

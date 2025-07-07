@@ -1,49 +1,73 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Avito Clone</title>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
     @RenderSection("Styles", required: false)
+    @using Microsoft.AspNetCore.Http
+    @inject IHttpContextAccessor HttpContextAccessor
 </head>
 
+
 <body>
+    <!-- Общая шапка для всех страниц -->
+    <header class="home-header">
+        <div class="home-header-container">
+
+            <!-- Добавленная кнопка "Главная" -->
+            <a asp-controller="Home" asp-action="Index" class="home-logo-link">
+                <div class="home-logo">Avito Clone</div>
+            </a>
+
+            <div class="home-search-container">
+                <input type="text" class="home-search-input" placeholder="Найти товары или услуги">
+                <button class="home-search-button">Найти</button>
+            </div>
+
+            @{
+                // Получаем имя пользователя из сессии
+                var currentUser = HttpContextAccessor.HttpContext?.Session.GetString("CurrentUser");
+            }
+
+            <!-- В шапке сайта меняем блок авторизации: -->
+            <div class="home-auth-buttons">
+                @if (currentUser != null)
+                {
+                    <span class="home-auth-button">@currentUser</span>
+                    <a asp-controller="User" asp-action="Logout" class="home-auth-button">Выйти</a>
+                }
+                else
+                {
+                    <a asp-controller="User" asp-action="Login" class="home-auth-button">Вход</a>
+                    <a asp-controller="User" asp-action="Register" class="home-auth-button">Регистрация</a>
+                }
+            </div>
+
+            <!-- Блок с кнопкой размещения объявления: -->
+            @if (currentUser != null)
+            {
+                <a asp-controller="Ad" asp-action="Create" class="home-add-button"> Разместить объявление</a>
+            }
+            else
+            {
+                <a asp-controller="User" asp-action="Login" class="home-add-button"> Разместить объявление</a>
+            }
+
+        </div>
+    </header>
+
+    <!-- Сюда подставляется содержимое конкретной страницы -->
     @RenderBody()
 
-    <div class="auth-buttons"></div>
-    @if (ViewData["CurrentUser"] != null)
-    {
-        <span>@ViewData["CurrentUser"]</span>
-        <a asp-controller="User" asp-action="Logout">Выйти</a>
-    }
-    else
-    {
-        <a asp-controller="User" asp-action="Login">Вход</a>
-        <a asp-controller="User" asp-action="Register">Регистрация</a>
-    }
-</div>
-
-@if (ViewData["CurrentUser"] != null)
-{
-    <a asp-controller="Ad" asp-action="Create" class="add-button">+ Разместить объявление</a>
-}
-else
-{
-    <a asp-controller="User" asp-action="Login" class="add-button">+ Разместить объявление</a>
-}
-
-public IActionResult Logout()
-{
-    ViewData["CurrentUser"] = null;
-    return RedirectToAction("Index", "Ad");
-}
-
+    <!-- Общий подвал -->
     <footer>
         <!-- Подвал сайта -->
     </footer>
 
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>

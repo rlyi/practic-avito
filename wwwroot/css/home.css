@@ -1,7 +1,7 @@
 /* Основные стили главной страницы */
 .home-header {
     background-color: #FF5500;
-    padding: 15px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -162,60 +162,167 @@
     font-weight: bold;
 }
 
-/* Модальное окно */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
+/* Стили для логотипа-ссылки */
+.home-logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
 }
 
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 350px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.close {
-    float: right;
-    cursor: pointer;
+.home-logo {
+    color: white;
+    font-weight: bold;
     font-size: 24px;
+    transition: color 0.3s;
+}
+
+.home-logo:hover {
+    color: #f8f8f8;
+}
+
+/* Дополнительно: можно добавить иконку домика */
+.home-logo::before {
+    content: "🏠";
+    margin-right: 8px;
+}
+
+/* Общие стили для форм авторизации */
+.auth-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+    font-size: 28px;
+    color: #FF5500;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
 .auth-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-.auth-form input {
-    padding: 10px;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-.auth-form button {
+.form-group input:focus {
+    border-color: #FF5500;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.2);
+}
+
+.auth-button {
     background-color: #FF5500;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 14px;
     border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-}
-
-.auth-switch {
-    text-align: center;
+    transition: background-color 0.3s;
     margin-top: 10px;
 }
 
-.auth-switch a {
+.auth-button:hover {
+    background-color: #E04B00;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 15px;
+}
+
+.auth-link {
     color: #FF5500;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.auth-link:hover {
+    color: #E04B00;
+    text-decoration: underline;
+}
+
+/* Стили для ошибок валидации */
+.validation-error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.input-validation-error {
+    border-color: #dc3545 !important;
+    background-color: #fff3f3;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 576px) {
+    .auth-container {
+        margin: 20px 15px;
+        padding: 25px 20px;
+    }
+    
+    .auth-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .auth-form {
+        gap: 15px;
+    }
+    
+    .form-group input {
+        padding: 10px 12px;
+    }
+    
+    .auth-button {
+        padding: 12px;
+    }
+}
+
+/* Дополнительные стили для улучшения UX */
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.auth-button:active {
+    transform: scale(0.98);
+}
+
+/* Стиль для ссылки "Забыли пароль?" (если будет добавлена) */
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    font-size: 14px;
 }

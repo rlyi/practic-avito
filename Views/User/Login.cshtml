@@ -1,21 +1,34 @@
 @model AvitoClone.Models.User
 
-<h2>Вход</h2>
+@{
+    ViewData["Title"] = "Вход";
+    Layout = "_Layout";
+}
 
-<form asp-action="Login" method="post">
-    <div>
-        <label asp-for="Username"></label>
-        <input asp-for="Username" />
-        <span asp-validation-for="Username"></span>
-    </div>
-    
-    <div>
-        <label asp-for="Password"></label>
-        <input asp-for="Password" type="password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    
-    <button type="submit">Войти</button>
-</form>
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" />
+}
 
-<p>Нет аккаунта? <a asp-action="Register">Зарегистрироваться</a></p>
+<div class="auth-container">
+    <h2 class="auth-title">Вход в аккаунт</h2>
+
+    <form class="auth-form" asp-action="Login" method="post">
+        <div class="form-group">
+            <label asp-for="Username">Имя пользователя</label>
+            <input asp-for="Username" class="form-control" placeholder="Введите ваш логин" />
+            <span asp-validation-for="Username" class="validation-error"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Password">Пароль</label>
+            <input asp-for="Password" type="password" class="form-control" placeholder="Введите пароль" />
+            <span asp-validation-for="Password" class="validation-error"></span>
+        </div>
+        
+        <button type="submit" class="auth-button">Войти</button>
+    </form>
+
+    <div class="auth-footer">
+        Нет аккаунта? <a class="auth-link" asp-action="Register">Зарегистрироваться</a>
+    </div>
+</div>

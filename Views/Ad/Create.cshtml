@@ -1,23 +1,95 @@
-@model AvitoClone.Models.Ad
+@model AvitoClone.Models.AdViewModel
 
-<h1>Добавить объявление</h1>
+@{
+    ViewData["Title"] = "Разместить объявление";
+    Layout = "_Layout";
+}
 
-<form asp-action="Create">
-    <div class="form-group">
-        <label asp-for="Title" class="control-label"></label>
-        <input asp-for="Title" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Description" class="control-label"></label>
-        <textarea asp-for="Description" class="form-control"></textarea>
-    </div>
-    <div class="form-group">
-        <label asp-for="Price" class="control-label"></label>
-        <input asp-for="Price" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="CategoryId" class="control-label"></label>
-        <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))"></select>
-    </div>
-    <button type="submit" class="btn btn-primary">Создать</button>
-</form>
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" />
+    <style>
+        .ad-form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea.form-control {
+            min-height: 150px;
+        }
+        .btn-submit {
+            background-color: #FF5500;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .image-preview {
+            max-width: 300px;
+            max-height: 300px;
+            margin: 15px 0;
+            display: none;
+        }
+    </style>
+}
+
+<div class="ad-form-container">
+    <h2>Добавить объявление</h2>
+    
+
+    
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Title">Название</label>
+            <input asp-for="Title" class="form-control" placeholder="Введите название" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Description">Описание</label>
+            <textarea asp-for="Description" class="form-control" placeholder="Подробное описание"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="Price">Цена (руб.)</label>
+            <input asp-for="Price" type="number" step="0.01" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="CategoryId">Категория</label>
+            <select asp-for="CategoryId" class="form-control" 
+                    asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))">
+                <option value="">-- Выберите категорию --</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="ImageFile">Изображение</label>
+            <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" 
+                   onchange="document.getElementById('imagePreview').src = window.URL.createObjectURL(this.files[0]);
+                            document.getElementById('imagePreview').style.display = 'block';" />
+            <img id="imagePreview" class="image-preview" />
+        </div>
+        
+        <button type="submit" class="btn-submit">Разместить объявление</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

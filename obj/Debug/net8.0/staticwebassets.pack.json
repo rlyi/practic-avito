@@ -5,16 +5,32 @@
       "PackagePath": "staticwebassets\\AvitoClone.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\ads\\ad_2.html",
+      "PackagePath": "staticwebassets\\ads\\ad_2.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\ads\\ad_3.html",
+      "PackagePath": "staticwebassets\\ads\\ad_3.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\ads\\ad_4.html",
+      "PackagePath": "staticwebassets\\ads\\ad_4.html"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\ads_templates\\ad_template.html",
+      "PackagePath": "staticwebassets\\ads_templates\\ad_template.html"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
       "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\images\\no-image.jpg",
+      "PackagePath": "staticwebassets\\images\\no-image.jpg"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\js\\auth.js",
@@ -251,6 +267,38 @@
     {
       "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\0b39ed7e-eb70-4e89-80ea-fa0380f28d58_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0b39ed7e-eb70-4e89-80ea-fa0380f28d58_fb93cc46f75acba582d499e350ec0988.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\291cacc1-1181-4892-8666-78f14ea5e718_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\291cacc1-1181-4892-8666-78f14ea5e718_fb93cc46f75acba582d499e350ec0988.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\310afb00-ca95-46f9-b4c0-56c939797421_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\310afb00-ca95-46f9-b4c0-56c939797421_fb93cc46f75acba582d499e350ec0988.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\59f4d94e-2e99-47ac-8f37-77eaa1b0098d_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\59f4d94e-2e99-47ac-8f37-77eaa1b0098d_fb93cc46f75acba582d499e350ec0988.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\5f5ce040-64cc-453a-9605-93d4c3d9ca11_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\5f5ce040-64cc-453a-9605-93d4c3d9ca11_fb93cc46f75acba582d499e350ec0988.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\cdadbbf8-b8f2-4375-9b94-860ed2f260c7_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\cdadbbf8-b8f2-4375-9b94-860ed2f260c7_fb93cc46f75acba582d499e350ec0988.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\ee6ba9e4-4455-4130-91f8-2b9ad838f61d_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ee6ba9e4-4455-4130-91f8-2b9ad838f61d_fb93cc46f75acba582d499e350ec0988.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\Practic1\\practic-avito\\wwwroot\\uploads\\f4f452e2-d452-4d82-be8a-a8f06b1c790e_fb93cc46f75acba582d499e350ec0988.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f4f452e2-d452-4d82-be8a-a8f06b1c790e_fb93cc46f75acba582d499e350ec0988.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AvitoClone.Microsoft.AspNetCore.StaticWebAssets.props",
