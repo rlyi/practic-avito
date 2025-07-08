@@ -1,41 +1,90 @@
+@model IEnumerable<AvitoClone.Models.Ad>
 @{
     ViewData["Title"] = "Главная страница";
     Layout = "_Layout";
 }
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/home.css" />
-}
+<style>
+    .ads-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .ad-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+    
+    .ad-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .ad-image-container {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .ad-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .ad-body {
+        padding: 15px;
+    }
+    
+    .ad-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .ad-price {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #2a5885;
+    }
+</style>
 
-<!-- Только уникальный контент страницы -->
-<div class="home-main-container">
-    <!-- Боковое меню -->
-    @* <aside class="home-sidebar">
-        <div class="home-categories-title">Все категории</div>
-        <div class="home-category-item">Авто</div>
-        <div class="home-category-item">Недвижимость</div>
-        <div class="home-category-item">Работа</div>
-    </aside> *@
-
-    <!-- Список объявлений -->
-    <main>
-        <div class="home-ads-grid">
-            <div class="home-ad-card">
-                <img src="https://via.placeholder.com/300x180" alt="Товар" class="home-ad-image">
-                <div class="home-ad-info">
-                    <div class="home-ad-title">Volkswagen Tiguan 1.4 MT, 2008</div>
-                    <div class="home-ad-price">645 000 ₽</div>
-                    <div class="home-ad-location">Киров</div>
-                </div>
-            </div>
+<div class="container-fluid">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+    
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">Объявлений не найдено</div>
+    }
+    else
+    {
+        <div class="ads-grid">
+            @foreach (var ad in Model)
+            {
+                <a asp-controller="GeneratedAds" asp-action="ViewGenerated" asp-route-id="@ad.Id" class="ad-card">
+                    <div class="ad-image-container">
+                        @if (!string.IsNullOrEmpty(ad.ImagePath))
+                        {
+                            <img src="@ad.ImagePath" class="ad-image" alt="@ad.Title">
+                        }
+                        else
+                        {
+                            <div class="ad-image bg-light d-flex align-items-center justify-content-center">
+                                <span>Нет изображения</span>
+                            </div>
+                        }
+                    </div>
+                    <div class="ad-body">
+                        <h3 class="ad-title">@ad.Title</h3>
+                        <div class="ad-price">@ad.Price.ToString("N0") ₽</div>
+                        <div class="text-muted mt-2">
+                            <small>@ad.Category?.Name</small>
+                        </div>
+                    </div>
+                </a>
+            }
         </div>
-
-        @* <!-- Рекомендуемые товары -->
-        <div class="home-recently-viewed">
-            <h2 class="home-section-title">Рекомендуем для вас</h2>
-            <div class="home-ads-grid">
-                <!-- Тут будут товары -->
-            </div>
-        </div> *@
-    </main>
+    }
 </div>

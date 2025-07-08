@@ -1,0 +1,64 @@
+@model AvitoClone.Models.Ad
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = $"{Model.Title} - AvitoClone";
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arcane-sf - AvitoClone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .ad-img { 
+            max-height: 500px; 
+            object-fit: contain; 
+        }
+        .ad-description {
+            white-space: pre-line;
+        }
+        .ad-date {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>arcane-sf</h1>
+                <div class="text-muted mb-3">
+                    <span>Автор: 123</span>
+                    <span class="ms-3 ad-date">
+                        @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+                    </span>
+                    <span class="ms-3 badge bg-primary"></span>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.ImagePath))
+                {
+                    <img src="/uploads/2d148bbf-ebbd-4d93-972e-6a445ab9fe1b_images.jpg" class="img-fluid ad-img mb-3">
+                }
+
+                <div class="mb-4">
+                    <h3>Описание</h3>
+                    <p class="ad-description">arcane sf</p>
+                    <h4 class="text-success">1 200,00 ₽</h4>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Чат по объявлению</div>
+                    <div class="card-body">
+                        <div class="alert alert-info">Чат будет здесь</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

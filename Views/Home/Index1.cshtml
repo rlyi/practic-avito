@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Главная страница";
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" />
+}
+
+<!-- Только уникальный контент страницы -->
+<div class="home-main-container">
+    <!-- Боковое меню -->
+    @* <aside class="home-sidebar">
+        <div class="home-categories-title">Все категории</div>
+        <div class="home-category-item">Авто</div>
+        <div class="home-category-item">Недвижимость</div>
+        <div class="home-category-item">Работа</div>
+    </aside> *@
+
+    <!-- Список объявлений -->
+    <main>
+        <div class="home-ads-grid">
+            <div class="home-ad-card">
+                <img src="https://via.placeholder.com/300x180" alt="Товар" class="home-ad-image">
+                <div class="home-ad-info">
+                    <div class="home-ad-title">Volkswagen Tiguan 1.4 MT, 2008</div>
+                    <div class="home-ad-price">645 000 ₽</div>
+                    <div class="home-ad-location">Киров</div>
+                </div>
+            </div>
+        </div>
+
+        @* <!-- Рекомендуемые товары -->
+        <div class="home-recently-viewed">
+            <h2 class="home-section-title">Рекомендуем для вас</h2>
+            <div class="home-ads-grid">
+                <!-- Тут будут товары -->
+            </div>
+        </div> *@
+    </main>
+</div>

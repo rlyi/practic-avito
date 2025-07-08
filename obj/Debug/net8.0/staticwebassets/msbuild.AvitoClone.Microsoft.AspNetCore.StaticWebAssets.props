@@ -1248,6 +1248,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\625de399-4ca5-4aa5-a51e-be597dfe3105_fb93cc46f75acba582d499e350ec0988.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\73db2e34-83d6-4af7-a2a1-833633d5e1e0_fb93cc46f75acba582d499e350ec0988.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AvitoClone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AvitoClone</BasePath>
+      <RelativePath>uploads/73db2e34-83d6-4af7-a2a1-833633d5e1e0_fb93cc46f75acba582d499e350ec0988.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\73db2e34-83d6-4af7-a2a1-833633d5e1e0_fb93cc46f75acba582d499e350ec0988.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\7aa78c1c-29b1-4f6a-9cf0-dbf5e2cf45f2_c972a4e9acc6fb1c89b35e47b01b38ac.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>AvitoClone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AvitoClone</BasePath>
+      <RelativePath>uploads/7aa78c1c-29b1-4f6a-9cf0-dbf5e2cf45f2_c972a4e9acc6fb1c89b35e47b01b38ac.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\7aa78c1c-29b1-4f6a-9cf0-dbf5e2cf45f2_c972a4e9acc6fb1c89b35e47b01b38ac.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\a114410d-ff41-488d-80af-3adba9ef1ff0_fb93cc46f75acba582d499e350ec0988.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>AvitoClone</SourceId>

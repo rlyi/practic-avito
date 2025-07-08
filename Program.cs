@@ -59,5 +59,10 @@ app.MapControllerRoute(
     name: "generated_ads",
     pattern: "ads/{id}",
     defaults: new { controller = "Ad", action = "ViewGenerated" });
+
+    app.MapControllerRoute(
+    name: "generated_ads",
+    pattern: "GeneratedAds/ViewGenerated/{id}",
+    defaults: new { controller = "GeneratedAds", action = "ViewGenerated" });
 app.Run();
 //program.cs

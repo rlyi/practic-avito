@@ -22,13 +22,40 @@ namespace AvitoClone.Controllers
         }
 
         // GET: /Ad (список всех объявлений)
+        // public async Task<IActionResult> Index()
+        // {
+        //     var ads = await _context.Ads
+        //         .Include(a => a.User)
+        //         .Include(a => a.Category)
+        //         .OrderByDescending(a => a.CreatedAt)
+        //         .ToListAsync();
+        //     return View(ads);
+        // }
+
+        // public async Task<IActionResult> Index()
+        // {
+        //     var ads = await _context.Ads
+        //         .Include(a => a.User)
+        //         .Include(a => a.Category)
+        //         .OrderByDescending(a => a.CreatedAt)
+        //         .ToListAsync();
+
+        //     // Добавляем проверку на null и возвращаем пустой список, если нет данных
+        //     return View(ads ?? new List<Ad>());
+        // }
+
         public async Task<IActionResult> Index()
         {
+            // Временный код для проверки
+            Console.WriteLine("Количество объявлений в БД: " + _context.Ads.Count());
+
             var ads = await _context.Ads
                 .Include(a => a.User)
                 .Include(a => a.Category)
                 .OrderByDescending(a => a.CreatedAt)
                 .ToListAsync();
+
+            Console.WriteLine("Загружено объявлений: " + ads.Count);
             return View(ads);
         }
 

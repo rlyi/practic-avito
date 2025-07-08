@@ -115,7 +115,7 @@ namespace AvitoClone.Controllers
 
                 // Автоматический вход после регистрации
                 HttpContext.Session.SetString("CurrentUser", user.Username);
-                return RedirectToAction("Index", "Ad");
+                return RedirectToAction("Index", "Home");
             }
             return View(user);
         }
@@ -127,7 +127,7 @@ namespace AvitoClone.Controllers
             // Если уже авторизован - редирект на главную
             if (HttpContext.Session.GetString("CurrentUser") != null)
             {
-                return RedirectToAction("Index", "Ad");
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }
@@ -147,7 +147,7 @@ namespace AvitoClone.Controllers
 
             // Сохраняем в сессии
             HttpContext.Session.SetString("CurrentUser", existingUser.Username);
-            return RedirectToAction("Index", "Ad");
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: /User/Logout
