@@ -1,6 +1,10 @@
 using AvitoClone.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +14,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache(); // Хранение сессий в памяти
 builder.Services.AddSession(); // Включение сессий
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    options.ViewLocationFormats.Add("/Views/GeneratedAds/{0}" + RazorViewEngine.ViewExtension);
+});
+
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
 
 // Добавляем DbContext с PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -42,6 +54,10 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    //pattern: "{controller=Ad}/{action=Index}/{id?}");
+//pattern: "{controller=Ad}/{action=Index}/{id?}");
+    app.MapControllerRoute(
+    name: "generated_ads",
+    pattern: "ads/{id}",
+    defaults: new { controller = "Ad", action = "ViewGenerated" });
 app.Run();
 //program.cs

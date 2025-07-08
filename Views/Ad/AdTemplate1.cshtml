@@ -1,0 +1,38 @@
+@model AvitoClone.Models.Ad
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = $"{Model.Title} - AvitoClone";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>@Model.Title</h1>
+            <div class="text-muted mb-3">
+                <span>Автор: @Model.User?.Username</span>
+                <span class="ms-3">Дата: @Model.CreatedAt.ToString("dd.MM.yyyy")</span>
+                <span class="ms-3 badge bg-primary">@Model.Category?.Name</span>
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ImagePath))
+            {
+                <img src="@Model.ImagePath" class="img-fluid ad-img mb-3">
+            }
+
+            <div class="mb-4">
+                <h3>Описание</h3>
+                <p class="ad-description">@Model.Description</p>
+                <h4 class="text-success">@Model.Price.ToString("C")</h4>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">Чат по объявлению</div>
+                <div class="card-body">
+                    <div class="alert alert-info">Чат будет здесь</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

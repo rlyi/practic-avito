@@ -22,9 +22,17 @@ build_property.EnableComHosting =
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\user\source\repos\Practic1\practic-avito
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/Ad/AdTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRcQWRUZW1wbGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/Ad/AdTemplate1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRcQWRUZW1wbGF0ZTEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/Practic1/practic-avito/Views/Ad/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRcQ3JlYXRlLmNzaHRtbA==
@@ -32,6 +40,34 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/source/repos/Practic1/practic-avito/Views/Ad/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/GeneratedAds/Ad_10.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGVkQWRzXEFkXzEwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/GeneratedAds/Ad_11.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGVkQWRzXEFkXzExLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/GeneratedAds/Ad_12.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGVkQWRzXEFkXzEyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/GeneratedAds/Ad_13.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGVkQWRzXEFkXzEzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/GeneratedAds/Ad_14.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGVkQWRzXEFkXzE0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/GeneratedAds/Ad_15.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGVkQWRzXEFkXzE1LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/Practic1/practic-avito/Views/GeneratedAds/Ad_9.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhdGVkQWRzXEFkXzkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/Practic1/practic-avito/Views/Home/Index.cshtml]
