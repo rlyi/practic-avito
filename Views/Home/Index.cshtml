@@ -1,7 +1,20 @@
 @model IEnumerable<AvitoClone.Models.Ad>
 @{
-    //ViewData["Title"] = "Главная страница";
     Layout = "_Layout";
+    @* ViewData["Title"] = "Главная страница"; *@
+
+    @* if (!string.IsNullOrEmpty(Context.Request.Query["searchQuery"]))
+    {
+        ViewData["Title"] = $"Поиск: {Context.Request.Query["searchQuery"]}";
+    }
+    else if (!string.IsNullOrEmpty(Context.Request.Query["categoryId"]))
+    {
+        if (int.TryParse(Context.Request.Query["categoryId"], out var categoryId))
+        {
+            var category = Model.FirstOrDefault()?.Category;
+            ViewData["Title"] = $"Категория: {category?.Name ?? ""}";
+        }
+    } *@
 }
 
 <style>

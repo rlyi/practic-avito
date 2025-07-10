@@ -25,23 +25,54 @@
 .home-search-container {
     flex-grow: 1;
     display: flex;
+    align-items: center;
+    /* Выравниваем элементы по вертикали */
+    gap: 10px;
+    /* Добавляем промежуток между элементами */
+}
+
+.home-search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
 }
 
 .home-search-input {
     padding: 12px 15px;
     border: none;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
     width: 100%;
     font-size: 16px;
+    flex-grow: 1;
+    /* Поле поиска занимает всё доступное пространство */
 }
 
 .home-search-button {
     background-color: #FF5500;
     color: white;
     border: 1px solid white;
-    border-radius: 0 4px 4px 0;
-    padding: 0 20px;
+    border-radius: 4px;
+    padding: 12px 20px;
     cursor: pointer;
+    white-space: nowrap;
+    /* Текст не переносится */
+}
+
+/* Стили для кнопки "Сбросить" */
+.home-search-container .btn-outline-secondary {
+    /* padding: 12px 15px;
+    white-space: nowrap;
+    border-radius: 4px;
+ */
+    background-color: #FF5500;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 12px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Текст не переносится */
 }
 
 .home-auth-buttons {
@@ -86,7 +117,7 @@
     border-radius: 8px;
     padding: 15px;
     margin-right: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .home-categories-title {
@@ -114,7 +145,7 @@
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
@@ -150,7 +181,7 @@
 .home-ad-location {
     font-size: 14px;
     color: #777;
-} 
+}
 
 .home-ad-date {
     font-size: 12px;
@@ -297,20 +328,20 @@
         margin: 20px 15px;
         padding: 25px 20px;
     }
-    
+
     .auth-title {
         font-size: 24px;
         margin-bottom: 20px;
     }
-    
+
     .auth-form {
         gap: 15px;
     }
-    
+
     .form-group input {
         padding: 10px 12px;
     }
-    
+
     .auth-button {
         padding: 12px;
     }
@@ -332,6 +363,7 @@
     margin-top: 5px;
     font-size: 14px;
 }
+
 .chat-container {
     height: 500px;
     display: flex;
@@ -390,4 +422,138 @@
 .disabled-chat {
     text-align: center;
     padding: 20px;
+}
+/* Стили для выпадающего меню категорий */
+/* .categories-dropdown {
+    position: relative;
+    margin-right: 15px;
+}
+
+.categories-toggle {
+    background-color: white;
+    color: #FF5500;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.categories-toggle:hover {
+    background-color: #f0f0f0;
+}
+
+.categories-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    z-index: 1000;
+    display: none;
+    min-width: 250px;
+}
+
+.categories-dropdown:hover .categories-menu {
+    display: block;
+}
+
+.category-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.category-submit {
+    background-color: #FF5500;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.category-reset {
+    color: #FF5500;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.category-reset:hover {
+    text-decoration: underline;
+}
+ */
+/* Стили для выбора категории */
+.categories-select {
+    margin-right: 15px;
+    position: relative;
+}
+
+.category-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-select {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px;
+    min-width: 180px;
+}
+
+.category-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.3);
+}
+
+.category-reset {
+    color: #FF5500;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.category-reset:hover {
+    color: #E04B00;
+}
+
+/* Стрелка для select */
+.categories-select::after {
+    content: "▼";
+    color: #FF5500;
+    font-size: 10px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
