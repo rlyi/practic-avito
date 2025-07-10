@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@Model.Title - AvitoClone</title>
+    <title>232323 - AvitoClone</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .ad-img {
@@ -98,24 +98,24 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-8">
-                <h1>@Model.Title</h1>
+                <h1>232323</h1>
                 <div class="text-muted mb-3">
-                    <span>Автор: @Model.User?.Username</span>
+                    <span>Автор: 123</span>
                     <span class="ms-3 ad-date">
                         @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")
                     </span>
-                    <span class="ms-3 badge bg-primary">@Model.Category?.Name</span>
+                    <span class="ms-3 badge bg-primary"></span>
                 </div>
 
                 @if (!string.IsNullOrEmpty(Model.ImagePath))
                 {
-                    <img src="@Model.ImagePath" class="img-fluid ad-img mb-3">
+                    <img src="/uploads/d8b1fb47-862c-4907-85bd-cdf4e6e21d0a_c972a4e9acc6fb1c89b35e47b01b38ac.jpg" class="img-fluid ad-img mb-3">
                 }
 
                 <div class="mb-4">
                     <h3>Описание</h3>
-                    <p class="ad-description">@Model.Description</p>
-                    <h4 class="text-success">@Model.Price.ToString("C")</h4>
+                    <p class="ad-description">123</p>
+                    <h4 class="text-success">123,00 ₽</h4>
                 </div>
             </div>
 
@@ -141,54 +141,81 @@
                             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                             <script>
                                 $(document).ready(function () {
+                                    // Функция загрузки сообщений
                                     function loadMessages() {
-                                        $.get('/Chat/GetMessages?adId=@Model.Id', function (response) {
-                                            console.log("Ответ сервера:", response);
-                                            $('#chatMessages').empty();
+                                        $.ajax({
+                                            url: '/Chat/GetMessages?adId=@Model.Id',
+                                            type: 'GET',
+                                            dataType: 'json',
+                                            success: function (response) {
+                                                if (response.success) {
+                                                    $('#chatMessages').empty();
+                                                    response.messages.forEach(function (msg) {
+                                                        const isOutgoing = msg.sender === '@currentUser';
+                                                        const messageClass = isOutgoing ? 'message-outgoing' : 'message-incoming';
 
-                                            if (response.Messages && response.Messages.length > 0) {
-                                                response.Messages.forEach(function (msg) {
-                                                    $('#chatMessages').append(`
-                                <div class="message ${msg.Sender === '@currentUser' ? 'message-outgoing' : 'message-incoming'}">
-                                    <div class="message-header">
-                                        <strong>${msg.Sender || 'Аноним'}</strong>
-                                        <span>${msg.Time || '--:--'}</span>
+                                                        $('#chatMessages').append(`
+                                    <div class="message ${messageClass}">
+                                        <div class="message-header">
+                                            <span class="message-sender">${msg.sender}</span>
+                                            <span class="message-time">${msg.time}</span>
+                                        </div>
+                                        <div class="message-text">${msg.text}</div>
                                     </div>
-                                    <div>${msg.Text || ''}</div>
-                                </div>
-                            `);
-                                                });
-                                                $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
+                                `);
+                                                    });
+                                                    $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
+                                                } else {
+                                                    console.error('Ошибка загрузки сообщений:', response.error);
+                                                }
+                                            },
+                                            error: function (xhr) {
+                                                console.error('Ошибка запроса:', xhr.responseText);
                                             }
                                         });
                                     }
 
+                                    // Обработчик отправки сообщения
                                     $('#chatForm').submit(function (e) {
                                         e.preventDefault();
-                                        const formData = {
-                                            adId: @Model.Id,
-                                            text: $('#messageText').val().trim()
-                                        };
 
-                                        if (!formData.text) return;
+                                        const messageText = $('#messageText').val().trim();
+                                        if (!messageText) return;
 
                                         $.ajax({
                                             url: '/Chat/SendMessage',
                                             type: 'POST',
-                                            data: formData,
-                                            success: function () {
-                                                $('#messageText').val('');
-                                                loadMessages();
+                                            contentType: 'application/json',
+                                            data: JSON.stringify({
+                                                AdId: @Model.Id,
+                                                Text: messageText
+                                            }),
+                                            success: function (response) {
+                                                if (response.success) {
+                                                    $('#messageText').val('');
+                                                    loadMessages();
+                                                } else {
+                                                    alert(response.error);
+                                                    if (response.error.includes("авторизация")) {
+                                                        window.location.href = '/User/Login';
+                                                    }
+                                                }
                                             },
                                             error: function (xhr) {
-                                                console.error("Ошибка:", xhr.responseText);
-                                                alert('Ошибка отправки: ' + (xhr.responseJSON?.error || xhr.statusText));
+                                                try {
+                                                    const response = JSON.parse(xhr.responseText);
+                                                    alert(response.error || 'Произошла ошибка');
+                                                } catch {
+                                                    alert('Произошла неизвестная ошибка');
+                                                }
                                             }
                                         });
                                     });
 
-                                    // Загрузка сообщений каждые 5 секунд
+                                    // Первоначальная загрузка сообщений
                                     loadMessages();
+
+                                    // Автообновление чата
                                     setInterval(loadMessages, 5000);
                                 });
                             </script>

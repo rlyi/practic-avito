@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
+using AvitoClone.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,8 +21,16 @@ builder.Services.Configure<RazorViewEngineOptions>(options =>
     options.ViewLocationFormats.Add("/Views/GeneratedAds/{0}" + RazorViewEngine.ViewExtension);
 });
 
+// Program.cs
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+
 builder.Services.AddControllersWithViews()
     .AddRazorRuntimeCompilation();
+
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options => {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Сохраняет регистр свойств
+    });
 
 // Добавляем DbContext с PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>

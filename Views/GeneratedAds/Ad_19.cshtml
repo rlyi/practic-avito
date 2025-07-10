@@ -4,40 +4,36 @@
 @{
     Layout = "_Layout";
     ViewData["Title"] = $"{Model.Title} - AvitoClone";
-    var currentUser = HttpContextAccessor.HttpContext?.Session.GetString("CurrentUser");
-    var isAuthenticated = currentUser != null;
+    var currentUser = HttpContextAccessor.HttpContext?.User.Identity?.Name;
+    var isAuthenticated = HttpContextAccessor.HttpContext?.User.Identity?.IsAuthenticated ?? false;
 }
 
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@Model.Title - AvitoClone</title>
+    <title>123 - AvitoClone</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .ad-img {
-            max-height: 500px;
-            object-fit: contain;
+        .ad-img { 
+            max-height: 500px; 
+            object-fit: contain; 
         }
-
         .ad-description {
             white-space: pre-line;
         }
-
         .ad-date {
             font-size: 0.9em;
             color: #6c757d;
         }
-
+        
         /* Стили для чата */
         .chat-container {
             height: 500px;
             display: flex;
             flex-direction: column;
         }
-
         .chat-messages {
             flex-grow: 1;
             overflow-y: auto;
@@ -46,7 +42,6 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
-
         .message {
             margin-bottom: 10px;
             padding: 8px 12px;
@@ -54,68 +49,60 @@
             max-width: 80%;
             word-wrap: break-word;
         }
-
         .message-incoming {
             background-color: #e9ecef;
             margin-right: auto;
         }
-
         .message-outgoing {
             background-color: #007bff;
             color: white;
             margin-left: auto;
         }
-
         .message-header {
             font-size: 0.8em;
             margin-bottom: 3px;
             display: flex;
             justify-content: space-between;
         }
-
         .message-time {
             opacity: 0.7;
         }
-
         .chat-input {
             display: flex;
             gap: 10px;
         }
-
         .chat-input textarea {
             flex-grow: 1;
             resize: none;
         }
-
         .disabled-chat {
             text-align: center;
             padding: 20px;
         }
     </style>
 </head>
-
 <body>
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-8">
-                <h1>@Model.Title</h1>
+                <h1>123</h1>
                 <div class="text-muted mb-3">
-                    <span>Автор: @Model.User?.Username</span>
+                    <span>Автор: 123</span>
                     <span class="ms-3 ad-date">
                         @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")
                     </span>
-                    <span class="ms-3 badge bg-primary">@Model.Category?.Name</span>
+                    <span class="ms-3 badge bg-primary"></span>
                 </div>
 
                 @if (!string.IsNullOrEmpty(Model.ImagePath))
                 {
-                    <img src="@Model.ImagePath" class="img-fluid ad-img mb-3">
+                    <img src="/uploads/3ae1eb3a-fe61-49e2-9065-9a8453fd6520_images.jpg" class="img-fluid ad-img mb-3">
                 }
 
                 <div class="mb-4">
                     <h3>Описание</h3>
-                    <p class="ad-description">@Model.Description</p>
-                    <h4 class="text-success">@Model.Price.ToString("C")</h4>
+                    <p class="ad-description">123</p>
+                    <h4 class="text-success">123,00 ₽</h4>
                 </div>
             </div>
 
@@ -129,81 +116,68 @@
                                 <div class="chat-messages" id="chatMessages">
                                     <!-- Сообщения будут загружаться здесь -->
                                 </div>
-
-                                <form id="chatForm" class="chat-input">
-                                    <input type="hidden" name="adId" value="@Model.Id" />
-                                    <textarea class="form-control" id="messageText" rows="2"
-                                    placeholder="Введите сообщение..." required></textarea>
-                                    <button type="submit" class="btn btn-primary">Отправить</button>
-                                </form>
+                                <div class="chat-input">
+                                    <form id="chatForm">
+                                        <input type="hidden" name="adId" value="@Model.Id" />
+                                        <textarea class="form-control" id="messageText" rows="2" placeholder="Введите сообщение..." required></textarea>
+                                        <button type="submit" class="btn btn-primary mt-2">Отправить</button>
+                                    </form>
+                                </div>
                             </div>
-
+                            
                             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                             <script>
-                                $(document).ready(function () {
+                                $(document).ready(function() {
                                     function loadMessages() {
-                                        $.get('/Chat/GetMessages?adId=@Model.Id', function (response) {
-                                            console.log("Ответ сервера:", response);
+                                        $.get('/Chat/GetMessages?adId=@Model.Id', function(messages) {
                                             $('#chatMessages').empty();
-
-                                            if (response.Messages && response.Messages.length > 0) {
-                                                response.Messages.forEach(function (msg) {
-                                                    $('#chatMessages').append(`
-                                <div class="message ${msg.Sender === '@currentUser' ? 'message-outgoing' : 'message-incoming'}">
-                                    <div class="message-header">
-                                        <strong>${msg.Sender || 'Аноним'}</strong>
-                                        <span>${msg.Time || '--:--'}</span>
-                                    </div>
-                                    <div>${msg.Text || ''}</div>
-                                </div>
-                            `);
-                                                });
-                                                $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
-                                            }
+                                            messages.forEach(function(msg) {
+                                                const isOutgoing = msg.sender === '@currentUser';
+                                                const messageClass = isOutgoing ? 'message-outgoing' : 'message-incoming';
+                                                
+                                                $('#chatMessages').append(`
+                                                    <div class="message ${messageClass}">
+                                                        <div class="message-header">
+                                                            <span class="message-sender">${msg.sender}</span>
+                                                            <span class="message-time">${msg.time}</span>
+                                                        </div>
+                                                        <div class="message-text">${msg.text}</div>
+                                                    </div>
+                                                `);
+                                            });
+                                            $('#chatMessages').scrollTop($('#chatMessages')[0].scrollHeight);
                                         });
                                     }
-
-                                    $('#chatForm').submit(function (e) {
+                                    
+                                    $('#chatForm').submit(function(e) {
                                         e.preventDefault();
-                                        const formData = {
+                                        const messageText = $('#messageText').val().trim();
+                                        if (!messageText) return;
+                                        
+                                        $.post('/Chat/SendMessage', {
                                             adId: @Model.Id,
-                                            text: $('#messageText').val().trim()
-                                        };
-
-                                        if (!formData.text) return;
-
-                                        $.ajax({
-                                            url: '/Chat/SendMessage',
-                                            type: 'POST',
-                                            data: formData,
-                                            success: function () {
-                                                $('#messageText').val('');
-                                                loadMessages();
-                                            },
-                                            error: function (xhr) {
-                                                console.error("Ошибка:", xhr.responseText);
-                                                alert('Ошибка отправки: ' + (xhr.responseJSON?.error || xhr.statusText));
-                                            }
+                                            text: messageText
+                                        }, function() {
+                                            $('#messageText').val('');
+                                            loadMessages();
                                         });
                                     });
-
-                                    // Загрузка сообщений каждые 5 секунд
+                                    
                                     loadMessages();
                                     setInterval(loadMessages, 5000);
                                 });
                             </script>
-
                         }
                         else
                         {
                             <div class="disabled-chat">
-                                <p>Чтобы писать в чате, <a asp-controller="User" asp-action="Login">войдите</a> или <a
-                                        asp-controller="User" asp-action="Register">зарегистрируйтесь</a></p>
+                                <p>Чтобы писать в чате, <a asp-controller="User" asp-action="Login">войдите</a> или <a asp-controller="User" asp-action="Register">зарегистрируйтесь</a></p>
                             </div>
                         }
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </body>
-
 </html>

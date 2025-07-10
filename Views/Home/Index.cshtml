@@ -1,6 +1,6 @@
 @model IEnumerable<AvitoClone.Models.Ad>
 @{
-    ViewData["Title"] = "Главная страница";
+    //ViewData["Title"] = "Главная страница";
     Layout = "_Layout";
 }
 
@@ -11,39 +11,39 @@
         gap: 20px;
         padding: 20px;
     }
-    
+
     .ad-card {
         border: 1px solid #e0e0e0;
         border-radius: 8px;
         overflow: hidden;
         transition: transform 0.2s;
     }
-    
+
     .ad-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .ad-image-container {
         height: 200px;
         overflow: hidden;
     }
-    
+
     .ad-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    
+
     .ad-body {
         padding: 15px;
     }
-    
+
     .ad-title {
         font-size: 1.1rem;
         margin-bottom: 10px;
     }
-    
+
     .ad-price {
         font-weight: bold;
         font-size: 1.2rem;
@@ -53,7 +53,7 @@
 
 <div class="container-fluid">
     <h1 class="my-4">@ViewData["Title"]</h1>
-    
+
     @if (!Model.Any())
     {
         <div class="alert alert-info">Объявлений не найдено</div>
@@ -72,7 +72,8 @@
                         else
                         {
                             <div class="ad-image bg-light d-flex align-items-center justify-content-center">
-                                <span>Нет изображения</span>
+                                <img src="~/images/placeholder.png" class="ad-image" alt="Нет изображения">
+                                @* <span>Нет изображения</span> *@
                             </div>
                         }
                     </div>
